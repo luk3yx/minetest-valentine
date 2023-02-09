@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card=Валентинка
+Valentine card (to "@1")=Валентинка (до "@1")
+Blank valentine card=Порожня валентинка
+Valentine Box=Скринька Валентина
+The valentine box is full!=Валентинка повна!
+Your card has been put into the box.=Вашу картку поклали в коробку.
+
+# Used when editing
+To:=До:
+Player not found!=Гравця не знайдено!
+No message specified!=Повідомлення не вказано!
+Message too long!=Повідомлення задовге!
+Done=Готово
+
+# Used when viewing (and possibly editing)
+To: @1=Кому: @1
+Message:=Повідомлення:
+From: @1=Від: @1

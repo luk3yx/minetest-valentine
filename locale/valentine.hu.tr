@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card=Valentin kártya
+Valentine card (to "@1")=Valentin kártya (a "@1"-nek)
+Blank valentine card=Üres valentin kártya
+Valentine Box=Valentin doboz
+The valentine box is full!=A Valentin doboz megtelt!
+Your card has been put into the box.=Az Ön kártyája a dobozba került.
+
+# Used when editing
+To:=To:
+Player not found!=A játékos nem található!
+No message specified!=Nincs üzenet megadva!
+Message too long!=Túl hosszú az üzenet!
+Done=Kész
+
+# Used when viewing (and possibly editing)
+To: @1=To: @1
+Message:=Üzenet:
+From: @1=From: @1

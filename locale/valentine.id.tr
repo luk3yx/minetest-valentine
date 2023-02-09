@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card=Kartu Valentine
+Valentine card (to "@1")=Kartu Valentine (untuk "@1")
+Blank valentine card=Kartu valentine kosong
+Valentine Box=Kotak Valentine
+The valentine box is full!=Kotak valentine sudah penuh!
+Your card has been put into the box.=Kartu Anda telah dimasukkan ke dalam kotak.
+
+# Used when editing
+To:=Untuk:
+Player not found!=Pemain tidak ditemukan!
+No message specified!=Tidak ada pesan yang ditentukan!
+Message too long!=Pesan terlalu panjang!
+Done=Selesai.
+
+# Used when viewing (and possibly editing)
+To: @1=Untuk: @1
+Message:=Pesan:
+From: @1=Dari: @1

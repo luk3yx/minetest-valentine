@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card
+Valentine card (to "@1")
+Blank valentine card
+Valentine Box
+The valentine box is full!
+Your card has been put into the box.
+
+# Used when editing
+To:
+Player not found!
+No message specified!
+Message too long!
+Done
+
+# Used when viewing (and possibly editing)
+To: @1
+Message:
+From: @1

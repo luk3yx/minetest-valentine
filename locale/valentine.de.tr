@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card=Valentine card
+Valentine card (to "@1")=Valentinskarte (an "@1")
+Blank valentine card=Blanko-Valentinskarte
+Valentine Box=Valentinstag-Box
+The valentine box is full!=Die Valentinskiste ist voll!
+Your card has been put into the box.=Ihre Karte wurde in den Kasten gelegt.
+
+# Used when editing
+To:=An:
+Player not found!=Spieler nicht gefunden!
+No message specified!=Keine Nachricht angegeben!
+Message too long!=Nachricht zu lang!
+Done=Erledigt
+
+# Used when viewing (and possibly editing)
+To: @1=An: @1
+Message:=Message:
+From: @1=von: @1

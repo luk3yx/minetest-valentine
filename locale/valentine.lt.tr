@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card=Valentino kortelė
+Valentine card (to "@1")=Valentino kortelė (adresuojama "@1")
+Blank valentine card=Tuščia Valentino kortelė
+Valentine Box=Valentino dėžutė
+The valentine box is full!=Valentino dėžutė pilna!
+Your card has been put into the box.=Jūsų kortelė įdėta į dėžutę.
+
+# Used when editing
+To:=Kam:
+Player not found!=Žaidėjas nerastas!
+No message specified!=Nenurodytas joks pranešimas!
+Message too long!=Per ilga žinutė!
+Done=Atlikta
+
+# Used when viewing (and possibly editing)
+To: @1=Kam: @1
+Message:=Pranešimas:
+From: @1=Iš: @1

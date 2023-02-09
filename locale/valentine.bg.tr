@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card=Картичка за Свети Валентин
+Valentine card (to "@1")=Картичка за Свети Валентин (до "@1")
+Blank valentine card=Празна карта за валентинка
+Valentine Box=Кутия за Свети Валентин
+The valentine box is full!=Кутията за валентинки е пълна!
+Your card has been put into the box.=Вашата карта е поставена в кутията.
+
+# Used when editing
+To:=До:
+Player not found!=Играчът не е намерен!
+No message specified!=Не е посочено съобщение!
+Message too long!=Съобщението е твърде дълго!
+Done=Готово
+
+# Used when viewing (and possibly editing)
+To: @1=До: @1
+Message:=Съобщение:
+From: @1=От: @1

@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card=Κάρτα Αγίου Βαλεντίνου
+Valentine card (to "@1")=Κάρτα Αγίου Βαλεντίνου (στο "@1")
+Blank valentine card=Κενή κάρτα Αγίου Βαλεντίνου
+Valentine Box=Κουτί Αγίου Βαλεντίνου
+The valentine box is full!=Το κουτί του Αγίου Βαλεντίνου είναι γεμάτο!
+Your card has been put into the box.=Η κάρτα σας έχει τοποθετηθεί στο κουτί.
+
+# Used when editing
+To:=Προς:
+Player not found!=Ο παίκτης δεν βρέθηκε!
+No message specified!=Δεν έχει καθοριστεί μήνυμα!
+Message too long!=Μήνυμα πολύ μεγάλο!
+Done=Έγινε
+
+# Used when viewing (and possibly editing)
+To: @1=Προς: @1
+Message:=Μήνυμα:
+From: @1=Από: @1

@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card=Valentinskort
+Valentine card (to "@1")=Valentinskort (til "@1")
+Blank valentine card=Blank valentine kort
+Valentine Box=Valentine Box
+The valentine box is full!=Valentinsæsken er fuld!
+Your card has been put into the box.=Dit kort er blevet lagt i æsken.
+
+# Used when editing
+To:=Til:
+Player not found!=Spiller ikke fundet!
+No message specified!=Der er ikke angivet nogen meddelelse!
+Message too long!=Meddelelsen er for lang!
+Done=Udført
+
+# Used when viewing (and possibly editing)
+To: @1=Til: @1
+Message:=Meddelelse:
+From: @1=Fra: @1

@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card=Valentýnské přání
+Valentine card (to "@1")=Valentýnské přání (pro "@1")
+Blank valentine card=Prázdná valentýnská karta
+Valentine Box=Valentine Box
+The valentine box is full!=Krabička na valentýnky je plná!
+Your card has been put into the box.=Vaše karta byla vložena do schránky.
+
+# Used when editing
+To:=Pro:
+Player not found!=Hráč nebyl nalezen!
+No message specified!=Žádná zpráva není uvedena!
+Message too long!=Zpráva je příliš dlouhá!
+Done=Hotovo
+
+# Used when viewing (and possibly editing)
+To: @1=Pro: @1
+Message:=Zpráva:
+From: @1=Od: @1

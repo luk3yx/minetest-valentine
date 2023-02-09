@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card=Valentini kaart
+Valentine card (to "@1")=Valentini kaart (aadressile "@1")
+Blank valentine card=Tühi valentine kaart
+Valentine Box=Valentine Box
+The valentine box is full!=Valentinikarp on täis!
+Your card has been put into the box.=Teie kaart on pandud kasti.
+
+# Used when editing
+To:=To:
+Player not found!=Mängijat ei leitud!
+No message specified!=Sõnum ei ole määratud!
+Message too long!=Sõnum liiga pikk!
+Done=Valmis
+
+# Used when viewing (and possibly editing)
+To: @1=To: @1
+Message:=Sõnum:
+From: @1=Alates: @1

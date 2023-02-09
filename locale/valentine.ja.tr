@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card=バレンタインカード
+Valentine card (to "@1")=バレンタイン・カード（「@1」宛）
+Blank valentine card=空白のバレンタインカード
+Valentine Box=バレンタインボックス
+The valentine box is full!=バレンタインボックスが満タンになりました
+Your card has been put into the box.=あなたのカードが箱に入れられました。
+
+# Used when editing
+To:=へ。
+Player not found!=プレーヤーが見つかりません!
+No message specified!=メッセージの指定がない！？
+Message too long!=メッセージが長すぎる
+Done=完了
+
+# Used when viewing (and possibly editing)
+To: @1=へ。@1
+Message:=メッセージ
+From: @1=からです。@1

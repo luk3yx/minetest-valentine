@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card=Sevgililer günü kartı
+Valentine card (to "@1")=Sevgililer günü kartı ("@1" için)
+Blank valentine card=Boş sevgililer günü kartı
+Valentine Box=Sevgililer Günü Kutusu
+The valentine box is full!=Sevgililer günü kutusu doldu!
+Your card has been put into the box.=Kartınız kutuya konuldu.
+
+# Used when editing
+To:=Kime?
+Player not found!=Oyuncu bulunamadı!
+No message specified!=Mesaj belirtilmemiş!
+Message too long!=Mesaj çok uzun!
+Done=Bitti
+
+# Used when viewing (and possibly editing)
+To: @1=Kime: @1
+Message:=Mesaj:
+From: @1=Kimden: @1

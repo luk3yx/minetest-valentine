@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card=Card de Valentine
+Valentine card (to "@1")=Felicitare de Valentine (pentru "@1")
+Blank valentine card=Card de Valentine alb
+Valentine Box=Valentine Box
+The valentine box is full!=Cutia de valentine este plină!
+Your card has been put into the box.=Cardul dvs. a fost pus în cutie.
+
+# Used when editing
+To:=Către:
+Player not found!=Jucătorul nu a fost găsit!
+No message specified!=Nici un mesaj specificat!
+Message too long!=Mesaj prea lung!
+Done=Realizat
+
+# Used when viewing (and possibly editing)
+To: @1=Către: @1
+Message:=Mesaj:
+From: @1=De la: @1

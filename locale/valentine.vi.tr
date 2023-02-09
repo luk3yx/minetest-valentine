@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card=Thiệp tình nhân
+Valentine card (to "@1")=Thiệp Valentine (tới "@1")
+Blank valentine card=Thiệp valentine trống
+Valentine Box=Hộp Valentine
+The valentine box is full!=Hộp quà Valentine đã đầy!
+Your card has been put into the box.=Thẻ của bạn đã được đưa vào hộp.
+
+# Used when editing
+To:=Đến:
+Player not found!=Không tìm thấy người chơi!
+No message specified!=Không có tin nhắn được chỉ định!
+Message too long!=Tin nhắn quá dài!
+Done=Xong
+
+# Used when viewing (and possibly editing)
+To: @1=Đến @1
+Message:=Tin nhắn:
+From: @1=Từ @1

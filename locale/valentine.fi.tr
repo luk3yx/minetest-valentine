@@ -1,0 +1,20 @@
+# textdomain: valentine
+
+Valentine card=Ystävänpäivä kortti
+Valentine card (to "@1")=Ystävänpäiväkortti (osoitteeseen "@1")
+Blank valentine card=Tyhjä ystävänpäivä kortti
+Valentine Box=Ystävänpäivä laatikko
+The valentine box is full!=Ystävänpäivälaatikko on täynnä!
+Your card has been put into the box.=Korttisi on laitettu laatikkoon.
+
+# Used when editing
+To:=To:
+Player not found!=Pelaajaa ei löydy!
+No message specified!=Viestiä ei ole määritetty!
+Message too long!=Viesti liian pitkä!
+Done=Valmis
+
+# Used when viewing (and possibly editing)
+To: @1=To: @1
+Message:=Viesti:
+From: @1=From: @1
