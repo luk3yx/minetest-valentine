@@ -1,12 +1,11 @@
 -- Valentine mod
 
-local S = minetest.get_translator("valentine")
+local S = core.get_translator("valentine")
 local gui = flow.widgets
 local line_lengths = {25, 25, 25, 20, 15}
 local tconcat = table.concat
-local utf8 = minetest.global_exists("utf8") and utf8 or string
+local utf8 = core.global_exists("utf8") and utf8 or string
 local utf8_gmatch, utf8_len, utf8_match, utf8_sub = utf8.gmatch, utf8.len, utf8.match, utf8.sub
-local have_cell_item = minetest.registered_items["default:cell"] ~= nil
 
 local function trim_trailing_space(str)
 	return utf8_match(str, "^(.-)%s?$")
@@ -70,14 +69,6 @@ local function wrap_text(str)
 end
 
 -- Card GUI
-local btn_props = {
-	bgimg = "formspec_button.png",
-	bgimg_hovered = "formspec_button_hovered.png",
-	bgimg_pressed = "formspec_button_pressed.png",
-	bgimg_middle = 20, padding = -10,
-	border = false,
-}
-
 local function Card(elem)
 	-- At this size, 50px in the texture = 0.4
 	-- px / 125 = coords
@@ -128,7 +119,7 @@ end
 local valentine_gui
 valentine_gui = flow.make_gui(function(player, ctx)
 	local name = player:get_player_name()
-	local is_admin = minetest.check_player_privs(name, "server")
+	local is_admin = core.check_player_privs(name, "server")
 
 	-- Just show the outside if it isn't open
 	if not ctx.open and not ctx.editing then
@@ -143,11 +134,10 @@ valentine_gui = flow.make_gui(function(player, ctx)
 		w = 5, expand = true, align_v = "centre",
 
 		-- Flow currently replaces centred labels with image_button internally
-		gui.StyleType{selectors = {"label", "image_button"}, props = {font_size = "*2"}},
 		gui.Label{
 			label = S("Valentine card"), align_h = "centre", h = 1,
+			style = {font_size = "*2"}
 		},
-		gui.StyleType{selectors = {"label", "image_button"}, props = {font_size = ""}},
 
 		-- The "To:" label
 		ctx.editing and gui.HBox{
@@ -179,12 +169,6 @@ valentine_gui = flow.make_gui(function(player, ctx)
 			label = ctx.err or "", align_h = "centre",
 		}
 		inside[#inside + 1] = gui.Spacer{h = 0.1, expand = false}
-		if have_cell_item then
-			inside[#inside + 1] = gui.Style{
-				selectors = {"done"},
-				props = btn_props,
-			}
-		end
 		inside[#inside + 1] = gui.Button{
 			name = "done", label = S("Done"),
 			align_h = "centre",
@@ -198,7 +182,7 @@ valentine_gui = flow.make_gui(function(player, ctx)
 
 				-- Make sure the "to" field is valid and the "message" field
 				-- can fit in the form
-				ctx.err_no_player = not minetest.player_exists(ctx.form.to)
+				ctx.err_no_player = not core.player_exists(ctx.form.to)
 				if ctx.form.msg == "" then
 					ctx.err = S("No message specified!")
 				else
@@ -249,23 +233,23 @@ valentine_gui = flow.make_gui(function(player, ctx)
 end)
 
 -- Written cards
-minetest.register_craftitem("valentine:card", {
+core.register_craftitem("valentine:card", {
 	description = S("Valentine card"),
 	inventory_image = "valentine_inv.png",
 	groups = {flammable = 3, not_in_creative_inventory = 1},
 	stack_max = 1,
 	on_use = function(itemstack, user, pointed_thing)
 		local meta = itemstack:get_meta()
-		local node = pointed_thing.type == "node" and minetest.get_node(pointed_thing.under)
+		local node = pointed_thing.type == "node" and core.get_node(pointed_thing.under)
 		-- If the player is punching a box, put the card in if possible
 		if node and node.name == "valentine:box" and meta:get_string("from") ~= "" then
-			local inv = minetest.get_meta(pointed_thing.under):get_inventory()
+			local inv = core.get_meta(pointed_thing.under):get_inventory()
 			itemstack = inv:add_item("main", itemstack)
 			if itemstack:is_empty() then
-				minetest.chat_send_player(user:get_player_name(),
+				core.chat_send_player(user:get_player_name(),
 					S("Your card has been put into the box."))
 			else
-				minetest.chat_send_player(user:get_player_name(),
+				core.chat_send_player(user:get_player_name(),
 					S("The valentine box is full!"))
 			end
 			return itemstack
@@ -295,7 +279,7 @@ minetest.register_craftitem("valentine:card", {
 })
 
 -- Blank cards
-minetest.register_craftitem("valentine:card_blank", {
+core.register_craftitem("valentine:card_blank", {
 	description = S("Blank valentine card"),
 	inventory_image = "valentine_inv.png",
 	groups = {flammable = 3},
@@ -306,7 +290,7 @@ minetest.register_craftitem("valentine:card_blank", {
 })
 
 -- Crafting
-minetest.register_craft({
+core.register_craft({
 	output = "valentine:card_blank",
 	recipe = {
 		{"default:paper", "default:paper"},
@@ -314,20 +298,20 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = "valentine:box",
 	type = "shapeless",
 	recipe =  {"default:chest", "default:paper", "default:paper", "dye:yellow"}
 })
 
 -- Let players burn cards
-minetest.register_craft({
+core.register_craft({
 	type = "fuel",
 	recipe = "valentine:card",
 	burntime = 1
 })
 
-minetest.register_craft({
+core.register_craft({
 	type = "fuel",
 	recipe = "valentine:card_blank",
 	burntime = 1
@@ -336,27 +320,6 @@ minetest.register_craft({
 --
 -- Valentine boxes
 --
-
-local InvList = gui.List
-if have_cell_item then
-	-- A custom element (like gui.List) that adds background cells
-	function InvList(elem)
-		local bg = {spacing = 0.25, align_h = "centre", align_v = "centre"}
-		for y = 1, elem.h do
-			local row = {spacing = 0.25}
-			for x = 1, elem.w do
-				row[x] = gui.ItemImage{w = 1, h = 1, item_name = "default:cell"}
-			end
-			bg[y] = gui.HBox(row)
-		end
-		elem.align_h = "start"
-		elem.align_v = "start"
-		return gui.Stack{
-			gui.VBox(bg),
-			gui.List(elem)
-		}
-	end
-end
 
 -- A quick and probably ugly GUI
 local valentine_box_gui = flow.make_gui(function(player, ctx)
@@ -367,27 +330,20 @@ local valentine_box_gui = flow.make_gui(function(player, ctx)
 		gui.HBox{
 			gui.ItemImage{w = 1, h = 1, item_name = "valentine:box"},
 			gui.Label{label = S("Valentine Box")},
-			gui.Spacer{},
-			have_cell_item and gui.ImageButtonExit{
-				w = 0.7, h = 0.7, name = "exit", align_v = "top",
-				texture_name = "close.png",
-				pressed_texture_name = "close_pressed.png",
-				drawborder = false,
-			} or nil,
 		},
-		InvList{
+		gui.List{
 			inventory_location = ("nodemeta:%d,%d,%d"):format(ctx.pos.x, ctx.pos.y, ctx.pos.z),
 			list_name = "main",
 			w = 9, h = 4,
 		},
-		gui.Label{label = minetest.translate("default", "Inventory")},
-		InvList{
+		gui.Label{label = core.translate("default", "Inventory")},
+		gui.List{
 			inventory_location = "current_player",
 			list_name = "main",
 			w = pinv_w, h = 3, starting_item_index = pinv_w,
 		},
 		gui.Listring{},
-		InvList{
+		gui.List{
 			inventory_location = "current_player",
 			list_name = "main",
 			w = pinv_w, h = 1,
@@ -396,25 +352,25 @@ local valentine_box_gui = flow.make_gui(function(player, ctx)
 end)
 
 local function allow_take_put(pos, count, player)
-	if minetest.is_protected(pos, player and player:get_player_name() or "") then
+	if core.is_protected(pos, player and player:get_player_name() or "") then
 		return 0
 	end
 	return count
 end
 
-minetest.register_node("valentine:box", {
+core.register_node("valentine:box", {
 	description = S("Valentine Box"),
 	tiles = {"valentine_box_top.png", "valentine_box_side.png"},
 	groups = {choppy = 2, oddly_breakable_by_hand = 2},
-	sounds = minetest.global_exists("default") and default.node_sound_wood_defaults() or nil,
+	sounds = core.global_exists("default") and default.node_sound_wood_defaults() or nil,
 	on_construct = function(pos)
-		local meta = minetest.get_meta(pos)
+		local meta = core.get_meta(pos)
 		meta:set_string("infotext", S("Valentine Box"))
 		meta:get_inventory():set_size("main", 9 * 4)
 	end,
 
 	on_rightclick = function(pos, _, clicker)
-		if not minetest.is_protected(pos, clicker:get_player_name()) then
+		if not core.is_protected(pos, clicker:get_player_name()) then
 			valentine_box_gui:show(clicker, {pos = pos})
 		end
 	end,
@@ -435,7 +391,7 @@ minetest.register_node("valentine:box", {
 		if not oldmetadata.inventory.main then return end
 		for _, stack in ipairs(oldmetadata.inventory.main) do
 			if not stack:is_empty() then
-				minetest.item_drop(stack, nil, pos)
+				core.item_drop(stack, nil, pos)
 			end
 		end
 	end
